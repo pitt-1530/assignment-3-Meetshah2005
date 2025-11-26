@@ -11,19 +11,19 @@ public class PlaylistRecommender {
             throw new IllegalArgumentException("BPM list cannot be null or empty");
         }
 
-        double total = 0;
+        double total_bpm = 0;
         for (int bpm : bpms)
         {
-            total += bpm;
+            total_bpm += bpm;
         }
-        double avg = total / bpms.size();
+        double average_bpm = total_bpm / bpms.size();
 
-        if (avg >= 140)
+        if (average_bpm >= 140)
         {
             return "HIGH";
         }
         // 100-139
-        else if (avg >= 100)
+        else if (average_bpm >= 100)
         { 
             return "MEDIUM";
         }
